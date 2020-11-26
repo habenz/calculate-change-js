@@ -45,10 +45,7 @@ function makeChange(cost, amtPaid){
 let result = makeChange(27.83,100); 
 console.log(result);
 
-let sum = 0;
-for (const [key,value] of Object.entries(result)) {
-	sum += key*value;
-}
+let sum = Object.entries(result).reduce((acc,[denom,amt]) => acc+(denom*amt),0);
 
 console.log(sum);
 
